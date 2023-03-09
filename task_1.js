@@ -3,13 +3,15 @@ const object1 = {
     weight: 8,
 };
 
-function GetInfo(object1){
-    for (const [key, value] of Object.entries(object1)) {
-        console.log(`${key}: ${value}`);
-      }
+function getInfo(object1){
+    for ( let key in object1){
+        if (object1.hasOwnProperty(prop)) {
+            console.log(prop); 
+        }   
+    }
  }
 
- getInfo(object1)
+getInfo(object1)
 
 
 

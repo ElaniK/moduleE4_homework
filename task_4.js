@@ -34,7 +34,7 @@ class Microwave extends KitchenTools{
 }
 
 const toaster = new Toaster('toaster', 10, 'on', 'Tefal');
-const microwave = new Microwave('microwave', 50, 'off', 'Grey');
+const microwave = new Microwave('microwave', 50, 'onии', 'Grey');
 
 const allTools = [toaster, microwave]
 
@@ -42,19 +42,15 @@ function getTotalPwr(arr){
     let sumPwr = 0;   
     for (let name of arr.values()){      
         if(name.option === 'on'){
-          name.power = name.power
-                       
+          name.power = name.power                      
         }else{
           name.power = 0 
         }
         sumPwr += name.power         
-      } 
-      
+      }      
     console.log(`Total power is ${sumPwr} w`)
   }
 
-
-  
 getTotalPwr(allTools)
 
 

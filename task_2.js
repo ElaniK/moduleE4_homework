@@ -10,7 +10,7 @@ const myObj = {
 const a = 'numb'
 const b = 5
 
-function SomFun(c, myObj){
+function somFun(c, myObj){
     return c in myObj
 }
 
