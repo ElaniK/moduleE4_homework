@@ -1,56 +1,30 @@
-class KitchenTools {
-    constructor(name, power, option){
-        this.name = name;
-        this.option = option;
-        this.power = power;
-    }
-    pwr(power){
-        this.power = power;
-        console.log(`The power of ${this.name} is ${this.power} v`);
-    }
-    on_off(option){
-        if (option == 'on') {
-            console.log(`${this.name} is turn on`)
-        }else {
-            console.log(`${this.name} is turn off`)
-        }
-    } 
+function KitchenTools(name, power, onOff){
+    this.name = name,
+    this.power = power,
+    this.onOff = onOff
+
 }
 
-class Toaster extends KitchenTools{
-    constructor(name, power, option, lable){
-        super(name, power, option);
-        this.lable = lable;
-        console.log(`${this.name} made by ${this.lable}`)
-    } 
-}
 
-class Microwave extends KitchenTools{
-    constructor(name, power, option, color){
-        super(name, power, option);
-        this.color = color
-        console.log(`${this.name} color is ${this.color}`)       
-    } 
-}
-
-const toaster = new Toaster('toaster', 10, 'on', 'Tefal');
-const microwave = new Microwave('microwave', 50, 'onии', 'Grey');
+const toaster = new KitchenTools(`toaster`, 10, `on`, )
+const microwave = new KitchenTools(`microwave`, 50, `on`)
 
 const allTools = [toaster, microwave]
 
-function getTotalPwr(arr){
+function totalPwr(arr){
     let sumPwr = 0;   
-    for (let name of arr.values()){      
-        if(name.option === 'on'){
-          name.power = name.power                      
+    arr.forEach((tool) =>{
+        if (tool.onOff == 'on'){
+            tool.power = tool.power
         }else{
-          name.power = 0 
+            tool.power = 0
         }
-        sumPwr += name.power         
-      }      
-    console.log(`Total power is ${sumPwr} w`)
-  }
+        sumPwr += tool.power        
+    })   
+    console.log(`Total power is ${sumPwr} w`) 
+  } 
 
-getTotalPwr(allTools)
+
+totalPwr(allTools)
 
 
